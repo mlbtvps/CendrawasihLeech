@@ -20,7 +20,7 @@ from tobrot.helper_funcs.bot_commands import BotCommands
 from tobrot.helper_funcs.filters import CustomFilters
 
 search_lock = asyncio.Lock()
-search_info = {False: dict(), True: dict()}
+search_info = {False: {}, True: {}}
 
 
 def sendMessage(text: str, bot, update: Update):
@@ -87,7 +87,7 @@ async def return_search(query, page=1, sukebei=False):
         except IndexError:
             return '', len(results), ttl
 
-message_info = dict()
+message_info = {}
 ignore = set()
 
 
