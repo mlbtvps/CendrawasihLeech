@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | gautamajay52
 
 import logging
 import math
@@ -91,7 +88,6 @@ class Progress:
                 humanbytes(current),
                 humanbytes(total),
                 humanbytes(speed),
-                # elapsed_time if elapsed_time != '' else "0 s",
                 estimated_total_time if estimated_total_time != "" else "0 s",
             )
             try:

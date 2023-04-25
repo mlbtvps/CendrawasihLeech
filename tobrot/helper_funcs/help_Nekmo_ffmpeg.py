@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
 
 import asyncio
 import os
@@ -24,7 +21,6 @@ async def take_screen_shot(video_file, output_directory, ttl):
             "drawtext=text='CendrawasihLeech':x=10:y=H-th-10:fontsize=14:fontcolor=white:bordercolor=black:borderw=1:fontfile=/usr/share/fonts/Hack-Bold.ttf",
             out_put_file_name,
         ]
-        # width = "90"
         process = await asyncio.create_subprocess_exec(
             *file_genertor_command,
             # stdout must a pipe to be accessible as process.stdout
