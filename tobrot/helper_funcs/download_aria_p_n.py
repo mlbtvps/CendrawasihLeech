@@ -54,8 +54,8 @@ tracker_urlsss = [
 ]
 tumtorrenttrackerstringi = ""
 sonstringtrckr = ""
-for i in range(len(tracker_urlsss)):
-    response = requests.get(tracker_urlsss[i])
+for i, item in enumerate(tracker_urlsss):
+    response = requests.get(item)
     response.encoding = "utf-8"
     tumtorrenttrackerstringi += "\n"
     tumtorrenttrackerstringi += response.text
