@@ -63,46 +63,7 @@ trackerlistemiz = KopyasizListe(Virgullustring(tumtorrenttrackerstringi))
 sonstringtrckr = ','.join(trackerlistemiz)
 
 async def aria_start():
-    aria2_daemon_start_cmd = []
-    # start the daemon, aria2c command
-    aria2_daemon_start_cmd.append("aria2c")
-    aria2_daemon_start_cmd.append("--allow-overwrite=true")
-    aria2_daemon_start_cmd.append("--daemon=true")
-    aria2_daemon_start_cmd.append("--enable-rpc=true")
-    aria2_daemon_start_cmd.append("--netrc-path=$HOME/.netrc")
-    aria2_daemon_start_cmd.append(f"--rpc-listen-port={ARIA_TWO_STARTED_PORT}")
-    aria2_daemon_start_cmd.append("--rpc-listen-all=false")
-    aria2_daemon_start_cmd.append("--check-certificate=false")
-    aria2_daemon_start_cmd.append("--follow-metalink=mem")
-    aria2_daemon_start_cmd.append("--max-connection-per-server=14")
-    aria2_daemon_start_cmd.append("--rpc-max-request-size=1024M")
-    aria2_daemon_start_cmd.append("--bt-max-peers=0")
-    aria2_daemon_start_cmd.append("--seed-time=0.01")
-    aria2_daemon_start_cmd.append("--min-split-size=10M")
-    aria2_daemon_start_cmd.append("--follow-torrent=mem")
-    aria2_daemon_start_cmd.append("--split=10")
-    aria2_daemon_start_cmd.append("--allow-overwrite=true")
-    aria2_daemon_start_cmd.append("--max-overall-upload-limit=1K")
-    aria2_daemon_start_cmd.append("--peer-id-prefix=-qB4350-")
-    aria2_daemon_start_cmd.append("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15")
-    aria2_daemon_start_cmd.append("--peer-agent=qBittorrent/4.3.5")
-    aria2_daemon_start_cmd.append("--disk-cache=64M")
-    aria2_daemon_start_cmd.append("--file-allocation=prealloc")
-    aria2_daemon_start_cmd.append("--continue=true")
-    aria2_daemon_start_cmd.append("--bt-request-peer-speed-limit=2048K")
-    aria2_daemon_start_cmd.append("--max-file-not-found=5")
-    aria2_daemon_start_cmd.append("--max-tries=20")
-    aria2_daemon_start_cmd.append("--auto-file-renaming=true")
-    aria2_daemon_start_cmd.append("--bt-enable-lpd=true")
-    aria2_daemon_start_cmd.append("--seed-ratio=1.0")
-    aria2_daemon_start_cmd.append("--content-disposition-default-utf8=true")
-    aria2_daemon_start_cmd.append("--http-accept-gzip=true")
-    aria2_daemon_start_cmd.append("--reuse-uri=true")
-    aria2_daemon_start_cmd.append(f"--bt-tracker={sonstringtrckr}")
-    aria2_daemon_start_cmd.append("--seed-time=0")
-    aria2_daemon_start_cmd.append(
-        f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}"
-    )
+    aria2_daemon_start_cmd = ["aria2c", "--allow-overwrite=true", "--daemon=true", "--enable-rpc=true", "--netrc-path=$HOME/.netrc", f"--rpc-listen-port={ARIA_TWO_STARTED_PORT}", "--rpc-listen-all=false", "--check-certificate=false", "--follow-metalink=mem", "--max-connection-per-server=14", "--rpc-max-request-size=1024M", "--bt-max-peers=0", "--seed-time=0.01", "--min-split-size=10M", "--follow-torrent=mem", "--split=10", "--allow-overwrite=true", "--max-overall-upload-limit=1K", "--peer-id-prefix=-qB4350-", "--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 11_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1 Safari/605.1.15", "--peer-agent=qBittorrent/4.3.5", "--disk-cache=64M", "--file-allocation=prealloc", "--continue=true", "--bt-request-peer-speed-limit=2048K", "--max-file-not-found=5", "--max-tries=20", "--auto-file-renaming=true", "--bt-enable-lpd=true", "--seed-ratio=1.0", "--content-disposition-default-utf8=true", "--http-accept-gzip=true", "--reuse-uri=true", f"--bt-tracker={sonstringtrckr}", "--seed-time=0", f"--bt-stop-timeout={MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START}"]
     #
     LOGGER.info(aria2_daemon_start_cmd)
     #
