@@ -264,7 +264,6 @@ async def call_apropriate_function(
                     p_name = f"{root}/{org}"
                     n_name = f"{root}/{CUSTOM_FILE_NAME}{org}"
                     os.rename(p_name, n_name)
-            to_upload_file = to_upload_file
 
     if cstom_file_name:
         os.rename(to_upload_file, cstom_file_name)
