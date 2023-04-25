@@ -206,7 +206,7 @@ async def call_apropriate_function(
             var = incoming_link.encode('utf-8')
             file = hashlib.md5(var).hexdigest()
             subprocess.run(
-                f"wget -O /CendrawasihLeech/{file}.torrent '{incoming_link}'", shell=True)
+                f"wget -O /CendrawasihLeech/{file}.torrent '{incoming_link}'", shell=True, check=True)
             sagtus, err_message = add_torrent(
                 aria_instance, f"/CendrawasihLeech/{file}.torrent")
         else:
