@@ -38,7 +38,7 @@ class CloneHelper:
         if os.path.exists("rclone.conf"):
             with open("rclone.conf", "r+") as file:
                 con = file.read()
-                self.dname = re.findall("\[(.*)\]", con)[0]
+                self.dname = re.findall(r"\[(.*)\]", con)[0]
 
     def get_id(self):
         mes = self.mess
@@ -102,7 +102,7 @@ class CloneHelper:
 
             LOGGER.info(gautii)
             gau_link = re.search(
-                "(?P<url>https?://[^\s]+)", gautii).group("url")
+                r"(?P<url>https?://[^\s]+)", gautii).group("url")
             LOGGER.info(gau_link)
             button = []
             button.append(
