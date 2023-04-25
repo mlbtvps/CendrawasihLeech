@@ -252,20 +252,19 @@ async def call_apropriate_function(
                 f"Can't extract {os.path.basename(to_upload_file)}, Uploading the same file"
             )
 
-    if to_upload_file:
-        if CUSTOM_FILE_NAME:
-            if os.path.isfile(to_upload_file):
-                os.rename(to_upload_file,
-                          f"{CUSTOM_FILE_NAME}{to_upload_file}")
-                to_upload_file = f"{CUSTOM_FILE_NAME}{to_upload_file}"
-            else:
-                for root, _, files in os.walk(to_upload_file):
-                    LOGGER.info(files)
-                    for org in files:
-                        p_name = f"{root}/{org}"
-                        n_name = f"{root}/{CUSTOM_FILE_NAME}{org}"
-                        os.rename(p_name, n_name)
-                to_upload_file = to_upload_file
+    if to_upload_file and CUSTOM_FILE_NAME:
+        if os.path.isfile(to_upload_file):
+            os.rename(to_upload_file,
+                      f"{CUSTOM_FILE_NAME}{to_upload_file}")
+            to_upload_file = f"{CUSTOM_FILE_NAME}{to_upload_file}"
+        else:
+            for root, _, files in os.walk(to_upload_file):
+                LOGGER.info(files)
+                for org in files:
+                    p_name = f"{root}/{org}"
+                    n_name = f"{root}/{CUSTOM_FILE_NAME}{org}"
+                    os.rename(p_name, n_name)
+            to_upload_file = to_upload_file
 
     if cstom_file_name:
         os.rename(to_upload_file, cstom_file_name)
