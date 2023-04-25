@@ -52,9 +52,8 @@ async def return_search(query, page=1, sukebei=False):
         results, get_time = used_search_info.get(query, (None, 0))
         if (time.time() - get_time) > 3600:
             results = []
-            async with aiohttp.ClientSession() as session:
-                async with session.get(f'https://{"sukebei." if sukebei else ""}nyaa.si/?page=rss&q={urlencode(query)}') as resp:
-                    d = feedparser.parse(await resp.text())
+            async with aiohttp.ClientSession() as session, session.get(f'https://{"sukebei." if sukebei else ""}nyaa.si/?page=rss&q={urlencode(query)}') as resp:
+                d = feedparser.parse(await resp.text())
             text = ''
             a = 0
             parser = pyrogram_html.HTML(None)
@@ -266,16 +265,15 @@ class TorrentSearch:
         query = urlencode(message.text.split(None, 1)[1])
         self.message = await message.reply_text("Searching")
         try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(f"{self.source}/{query}", timeout=15) as resp:
-                    if (resp.status != 200):
-                        raise Exception('unsuccessful request')
-                    result = await resp.json()
-                    if (result and isinstance(result[0], list)):
-                        result = list(itertools.chain(*result))
-                    self.response = result
-                    self.response_range = range(
-                        0, len(self.response), self.RESULT_LIMIT)
+            async with aiohttp.ClientSession() as session, session.get(f"{self.source}/{query}", timeout=15) as resp:
+                if (resp.status != 200):
+                    raise Exception('unsuccessful request')
+                result = await resp.json()
+                if (result and isinstance(result[0], list)):
+                    result = list(itertools.chain(*result))
+                self.response = result
+                self.response_range = range(
+                    0, len(self.response), self.RESULT_LIMIT)
         except:
             await self.message.edit("No Results Found.")
             return
