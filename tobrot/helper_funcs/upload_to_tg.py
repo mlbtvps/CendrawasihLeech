@@ -189,11 +189,8 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         LOGGER.info(tam.decode())
         gauti = f"https://drive.google.com/file/d/{manssizz}/view?usp=drivesdk"
         gjay = size(os.path.getsize(file_upload))
-        button = []
-        button.append(
-            [pyrogram.InlineKeyboardButton(
-                text="CloudUrl", url=f"{gauti}")]
-        )
+        button = [[pyrogram.InlineKeyboardButton(
+                text="CloudUrl", url=f"{gauti}")]]
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}"
             tam_link = requests.utils.requote_uri(indexurl)
@@ -256,11 +253,8 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gautii = f"https://drive.google.com/folderview?id={manssizz}"
         gjay = size(getFolderSize(file_upload))
         LOGGER.info(gjay)
-        button = []
-        button.append(
-            [pyrogram.InlineKeyboardButton(
-                text="CloudUrl", url=f"{gautii}")]
-        )
+        button = [[pyrogram.InlineKeyboardButton(
+                text="CloudUrl", url=f"{gautii}")]]
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}/"
             tam_link = requests.utils.requote_uri(indexurl)

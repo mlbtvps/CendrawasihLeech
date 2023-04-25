@@ -104,14 +104,11 @@ class CloneHelper:
             gau_link = re.search(
                 r"(?P<url>https?://[^\s]+)", gautii).group("url")
             LOGGER.info(gau_link)
-            button = []
-            button.append(
-                [
+            button = [[
                     pyrogram.InlineKeyboardButton(
                         text="☁️ CloudUrl ☁️", url=f"{gau_link}"
                     )
-                ]
-            )
+                ]]
             if INDEX_LINK:
                 if _flag == "--files-only":
                     indexurl = f"{INDEX_LINK}/{self.name}"
