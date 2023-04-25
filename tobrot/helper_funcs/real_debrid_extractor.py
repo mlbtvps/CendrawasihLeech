@@ -2,9 +2,6 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 
-import asyncio
-import logging
-import os
 
 import aiohttp
 from tobrot import REAL_DEBRID_KEY, LOGGER

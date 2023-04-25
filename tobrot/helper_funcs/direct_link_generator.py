@@ -7,13 +7,9 @@
 from https://github.com/AvinashReddy3108/PaperplaneExtended . I hereby take no credit of the following code other
 than the modifications. See https://github.com/AvinashReddy3108/PaperplaneExtended/commits/master/userbot/modules/direct_links.py
 for original authorship. """
-
-import logging
 import json
-import math
 import re
 import urllib.parse
-from os import popen
 from random import choice
 from urllib.parse import urlparse
 
@@ -22,7 +18,6 @@ import requests
 import cfscrape
 from bs4 import BeautifulSoup
 from js2py import EvalJs
-from lk21.extractors.bypasser import Bypass
 from base64 import standard_b64encode
 
 from tobrot.helper_funcs.exceptions import DirectDownloadLinkException

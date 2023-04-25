@@ -3,12 +3,8 @@
 # (c) Shrimadhav U K
 
 import asyncio
-import logging
 import os
 import time
-
-from tobrot.helper_funcs.copy_similar_file import copy_file
-from tobrot import LOGGER
 
 
 async def take_screen_shot(video_file, output_directory, ttl):

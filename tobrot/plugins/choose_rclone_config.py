@@ -4,9 +4,6 @@
 # (c) xiaoqi-beta | gautamajay52
 
 import configparser  # buildin package
-import logging
-import os
-import re
 
 import pyrogram.types as pyrogram
 from pyrogram.types import CallbackQuery

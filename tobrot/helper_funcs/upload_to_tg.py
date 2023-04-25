@@ -3,11 +3,9 @@
 # (c) Shrimadhav U K | gautamajay52
 
 import asyncio
-import logging
 import os
 import re
 import shutil
-import subprocess
 import time
 from functools import partial
 from pathlib import Path
@@ -19,9 +17,7 @@ from hachoir.parser import createParser
 from hurry.filesize import size
 from PIL import Image
 from pyrogram.errors import FloodWait, MessageNotModified
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.types import InputMediaAudio, InputMediaDocument, InputMediaVideo
-from requests.utils import requote_uri
 from tobrot import (
     DESTINATION_FOLDER,
     DOWNLOAD_LOCATION,
@@ -31,8 +27,7 @@ from tobrot import (
     RCLONE_CONFIG,
     TG_MAX_FILE_SIZE,
     UPLOAD_AS_DOC,
-    gDict,
-)
+    )
 from tobrot.helper_funcs.copy_similar_file import copy_file
 from tobrot.helper_funcs.display_progress import humanbytes, Progress
 from tobrot.helper_funcs.help_Nekmo_ffmpeg import take_screen_shot

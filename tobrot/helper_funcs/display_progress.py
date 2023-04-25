@@ -4,7 +4,6 @@
 
 import logging
 import math
-import os
 import time
 
 from pyrogram.errors.exceptions import FloodWait
@@ -15,7 +14,6 @@ from tobrot import (
     gDict,
     LOGGER,
 )
-from pyrogram import Client
 
 logging.basicConfig(
     level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
