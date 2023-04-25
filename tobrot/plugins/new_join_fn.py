@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 
-import logging
-
-import pyrogram
-from tobrot import AUTH_CHANNEL, LOGGER
 
 
 async def new_join_f(client, message):

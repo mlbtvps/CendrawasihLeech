@@ -2,17 +2,13 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K | gautamajay52
 
-import io
 import logging
 import os
-import sys
-import traceback
 
-from pyrogram import Client, filters, idle
-from pyrogram.raw import functions, types
+from pyrogram import Client, filters
 from pyrogram.handlers import CallbackQueryHandler, MessageHandler
 
-from tobrot import app, bot, dispatcher
+from tobrot import app, bot
 from tobrot import (
     API_HASH,
     APP_ID,
@@ -29,7 +25,6 @@ from tobrot import (
     LEECH_UNZIP_COMMAND,
     LEECH_ZIP_COMMAND,
     LOG_COMMAND,
-    LOGGER,
     PYTDL_COMMAND,
     RENEWME_COMMAND,
     SAVE_THUMBNAIL,
@@ -50,7 +45,6 @@ from tobrot.plugins import *
 
 # the logging things
 from tobrot.plugins.torrent_search import searchhelp
-from tobrot.helper_funcs.bot_commands import BotCommands
 from tobrot.plugins.choose_rclone_config import rclone_command_f
 from tobrot.plugins.custom_thumbnail import clear_thumb_nail, save_thumb_nail
 from tobrot.plugins.incoming_message_fn import (

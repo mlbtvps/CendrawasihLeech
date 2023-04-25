@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 # (c) Shrimadhav U K
 
-import logging
 
 import aiohttp
 from pyrogram.types import MessageEntity
