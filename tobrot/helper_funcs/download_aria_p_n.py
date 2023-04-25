@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | gautamajay52
 
 import asyncio
 import os
@@ -76,8 +73,6 @@ async def aria_start():
     aria2_daemon_start_cmd.append(f"--rpc-listen-port={ARIA_TWO_STARTED_PORT}")
     aria2_daemon_start_cmd.append("--rpc-listen-all=false")
     aria2_daemon_start_cmd.append("--check-certificate=false")
-    # aria2_daemon_start_cmd.append("--enable-dht")
-    # aria2_daemon_start_cmd.append("--dht-listen-port=6881")
     aria2_daemon_start_cmd.append("--follow-metalink=mem")
     aria2_daemon_start_cmd.append("--max-connection-per-server=14")
     aria2_daemon_start_cmd.append("--rpc-max-request-size=1024M")
@@ -360,7 +355,6 @@ async def call_apropriate_function(
 
 # https://github.com/jaskaranSM/UniBorg/blob/6d35cf452bce1204613929d4da7530058785b6b1/stdplugins/aria.py#L136-L164
 async def check_progress_for_dl(aria2, gid, event, previous_message):
-    # g_id = event.reply_to_message.from_user.id
     try:
         file = aria2.get_download(gid)
         complete = file.is_complete

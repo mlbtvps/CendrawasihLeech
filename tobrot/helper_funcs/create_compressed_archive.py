@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | gautamajay52
 
 import asyncio
 import os
@@ -51,7 +48,6 @@ async def unzip_me(input_directory):
     return_name = None
     if os.path.exists(input_directory):
         base_dir_name = os.path.basename(input_directory)
-        # uncompressed_file_name = os.path.splitext(base_dir_name)[0]
         uncompressed_file_name = get_base_name(base_dir_name)
         LOGGER.info(uncompressed_file_name)
         g_cmd = ["extract", f"{input_directory}"]
@@ -98,8 +94,6 @@ async def untar_me(input_directory):
         mc, kanger = await bc_kanger.communicate()
         LOGGER.info(mc)
         LOGGER.info(kanger)
-        # e_response = stderr.decode().strip()
-        # t_response = stdout.decode().strip()
         if os.path.exists(uncompressed_file_name):
             try:
                 os.remove(input_directory)
@@ -131,8 +125,6 @@ async def unrar_me(input_directory):
         jai, hind = await jai_hind.communicate()
         LOGGER.info(jai)
         LOGGER.info(hind)
-        # e_response = stderr.decode().strip()
-        # t_response = stdout.decode().strip()
         if os.path.exists(uncompressed_file_name):
             try:
                 os.remove(input_directory)

@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | gautamjay52
 
 import asyncio
 import json
@@ -126,7 +123,6 @@ async def youtube_dl_call_back(bot, update):
         ]
     #
     command_to_exec.append("--no-warnings")
-    # command_to_exec.append("--quiet")
     command_to_exec.append("--restrict-filenames")
     #
     if "hotstar" in youtube_dl_url:
@@ -143,8 +139,6 @@ async def youtube_dl_call_back(bot, update):
     stdout, stderr = await process.communicate()
     e_response = stderr.decode().strip()
     t_response = stdout.decode().strip()
-    # LOGGER.info(e_response)
-    # LOGGER.info(t_response)
     ad_string_to_replace = "<i>Unknow error. Please check the logs.</i>"
     if e_response and ad_string_to_replace in e_response:
         error_message = e_response.replace(ad_string_to_replace, "")

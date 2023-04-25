@@ -377,7 +377,6 @@ async def searchhelp(self, message):
 • /ts <i>[search query]</i>
 '''
     await message.reply(help_string, parse_mode="HTML")
-    #sendMessage(help_string, context.bot, update)
 
     # & CustomFilters.mirror_owner_filter Not Used 😉
 SEARCHHELP_HANDLER = CommandHandler(BotCommands.TsHelpCommand, searchhelp, filters=(

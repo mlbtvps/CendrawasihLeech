@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K | gautamajay52
 
 import asyncio
 import os
@@ -63,14 +60,12 @@ async def upload_to_tg(
     if os.path.isdir(local_file_name):
         directory_contents = os.listdir(local_file_name)
         directory_contents.sort()
-        # number_of_files = len(directory_contents)
         LOGGER.info(directory_contents)
         new_m_esg = message
         if not message.photo:
             new_m_esg = await message.reply_text(
                 f"<code>{len(directory_contents)}</code> files in <code>{local_file_name}</code>",
                 quote=True
-                # reply_to_message_id=message.message_id
             )
         for single_file in directory_contents:
             # recursion: will this FAIL somewhere?
@@ -188,12 +183,10 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gau_tam = await asyncio.create_subprocess_exec(
             *t_a_m, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
         )
-        # os.remove("filter.txt")
         gau, tam = await gau_tam.communicate()
         manssizz = gau.decode().strip()
         LOGGER.info(gau.decode())
         LOGGER.info(tam.decode())
-        # os.remove("filter.txt")
         gauti = f"https://drive.google.com/file/d/{manssizz}/view?usp=drivesdk"
         gjay = size(os.path.getsize(file_upload))
         button = []
@@ -256,12 +249,10 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gau_tam = await asyncio.create_subprocess_exec(
             *g_a_u, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
         )
-        # os.remove("filter1.txt")
         gau, tam = await gau_tam.communicate()
         manssizz = gau.decode("utf-8")
         LOGGER.info(manssizz)
         LOGGER.info(tam.decode("utf-8"))
-        # os.remove("filter1.txt")
         gautii = f"https://drive.google.com/folderview?id={manssizz}"
         gjay = size(getFolderSize(file_upload))
         LOGGER.info(gjay)
@@ -423,7 +414,6 @@ async def upload_single_file(
                             duration=duration,
                             supports_streaming=True,
                         )
-                        # quote=True,
                     )
                 else:
                     sent_message = await message.reply_video(

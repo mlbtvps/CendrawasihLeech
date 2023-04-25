@@ -1,8 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-#
 """ Helper Module containing various sites direct links generators. This module is copied and modified as per need
 from https://github.com/AvinashReddy3108/PaperplaneExtended . I hereby take no credit of the following code other
 than the modifications. See https://github.com/AvinashReddy3108/PaperplaneExtended/commits/master/userbot/modules/direct_links.py
@@ -180,11 +175,6 @@ def filesIm(url: str) -> str:
 
 
 def sbembed(text_url: str) -> str:
-    # dl_url = ''
-    # try:
-    #     text_url = re.findall(r'\bhttps?://.*sbembed\.com\S+', url)[0]
-    # except IndexError:
-    #     raise DirectDownloadLinkException("`No sbembed links found`\n")
     bypasser = lk21.Bypass()
     dl_url = bypasser.bypass_sbembed(text_url)
     lst_link = []
@@ -337,23 +327,6 @@ def yandex_disk(url: str) -> str:
             "`Error: File not found / Download limit reached`\n")
 
 
-# def cm_ru(url: str) -> str:
-#     """ cloud.mail.ru direct links generator
-#     Using https://github.com/JrMasterModelBuilder/cmrudl.py"""
-#     reply = ''
-#     try:
-#         text_url = re.findall(r'\bhttps?://.*cloud\.mail\.ru\S+', url)[0]
-#     except IndexError:
-#         raise DirectDownloadLinkException("`No cloud.mail.ru links found`\n")
-#     command = f'vendor/cmrudl.py/cmrudl -s {text_url}'
-#     result = popen(command).read()
-#     result = result.splitlines()[-1]
-#     try:
-#         data = json.loads(result)
-#     except json.decoder.JSONDecodeError:
-#         raise DirectDownloadLinkException("`Error: Can't extract the link`\n")
-#     dl_url = data['download']
-#     return dl_url
 
 
 def mediafire(url: str) -> str:
@@ -403,10 +376,6 @@ def github(url: str) -> str:
 
 def racaty(url: str) -> str:
     dl_url = ''
-    # try:
-    #     text_url = re.findall(r'\bhttps?://.*racaty\.net\S+', url)[0]
-    # except IndexError:
-    #     raise DirectDownloadLinkException("`No Racaty links found`\n")
     scraper = cfscrape.create_scraper()
     r = scraper.get(url)
     soup = BeautifulSoup(r.text, "lxml")

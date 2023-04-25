@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
 
 import asyncio
 import json
@@ -48,7 +45,6 @@ async def extract_youtube_dl_formats(
     # LOGGER.info(t_response)
     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
     if e_response:
-        # logger.warn("Status : FAIL", exc.returncode, exc.output)
         error_message = e_response.replace(
             "Unknow error. Please check the logs",
             "",
@@ -63,7 +59,6 @@ async def extract_youtube_dl_formats(
                 response_json.append(json.loads(yu_r))
         else:
             response_json.append(json.loads(x_reponse))
-        # response_json = json.loads(x_reponse)
         save_ytdl_json_path = user_working_dir + \
             "/" + str("ytdleech") + ".json"
         with open(save_ytdl_json_path, "w", encoding="utf8") as outfile:
@@ -72,8 +67,6 @@ async def extract_youtube_dl_formats(
         inline_keyboard = []
         #
         thumb_image = DEF_THUMB_NAIL_VID_S
-        #
-        # LOGGER.info(response_json)
         for current_r_json in response_json:
             #
             thumb_image = current_r_json.get("thumbnail", thumb_image)
