@@ -170,6 +170,6 @@ async def extract_youtube_dl_formats(
         if cf_name:
             succss_mesg = f"""Select the desired format | {cf_name}"""
         else:
-            succss_mesg = f"""Select the desired format"""
+            succss_mesg = """Select the desired format"""
         LOGGER.info(succss_mesg)
         return thumb_image, succss_mesg, reply_markup

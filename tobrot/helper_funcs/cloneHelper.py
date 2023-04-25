@@ -153,7 +153,7 @@ class CloneHelper:
             )
 
     async def gcl(self):
-        self.lsg = await self.mess.reply_text(f"Cloning... It take some time. don't cancel or stop this process")
+        self.lsg = await self.mess.reply_text("Cloning... It take some time. don't cancel or stop this process")
         destination = f"{DESTINATION_FOLDER}"
         idd = "{" f"{self.g_id}" "}"
         cmd = [
