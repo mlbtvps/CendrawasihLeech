@@ -153,9 +153,9 @@ def multi_rclone_init():
         LOGGER.info("rclone.conf backuped to rclone_bak.conf!")
 
 
-multi_rclone_init()
-app = Client("CendrawasihLeech", bot_token=TG_BOT_TOKEN,
-             api_id=APP_ID, api_hash=API_HASH, workers=343)
-updater = tg.Updater(bot_token=TG_BOT_TOKEN)
-bot = updater.bot
-dispatcher = updater.dispatcher
+#multi_rclone_init()
+#app = Client("CendrawasihLeech", bot_token=TG_BOT_TOKEN,
+             #api_id=APP_ID, api_hash=API_HASH, workers=343)
+#updater = tg.Updater(bot_token=TG_BOT_TOKEN)
+#bot = updater.bot
+#dispatcher = updater.dispatcher
